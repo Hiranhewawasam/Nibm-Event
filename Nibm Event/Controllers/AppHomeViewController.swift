@@ -19,6 +19,29 @@ class AppHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var postData = [String]()
     
+    
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+          let pdata = postData[indexPath.row]
+          let alertController = UIAlertController(title: "Example", message: "example", preferredStyle: .alert)
+          
+          let updateAction = UIAlertAction(title: "Update", style: .default){(_) in
+              
+          }
+          let deleteAction = UIAlertAction(title: "Delete", style: .default){(_) in
+                     
+                 }
+          
+      
+          
+          alertController.addAction(updateAction)
+          alertController.addAction(deleteAction)
+          
+          present(alertController, animated:true, completion: nil)
+          
+      }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

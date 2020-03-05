@@ -16,7 +16,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
         
     }
     
@@ -30,9 +29,23 @@ class LoginViewController: UIViewController {
                   
                 if let e = error{
                     print(e.localizedDescription)
+                    let alert = UIAlertController(title: "Alert", message: "Username or password incorrect", preferredStyle: UIAlertController.Style.alert)
+
+                    // add an action (button)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+                    // show the alert
+                    self.present(alert, animated: true, completion: nil)
                 }else{
-                    
+                   
                  self.performSegue(withIdentifier: "LoginToHome", sender: self)
+                    let alert = UIAlertController(title: "Alert", message: "Login Successfully", preferredStyle: UIAlertController.Style.alert)
+
+                                       // add an action (button)
+                                       alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+                                       // show the alert
+                                       self.present(alert, animated: true, completion: nil)
                 }
                 
                    }

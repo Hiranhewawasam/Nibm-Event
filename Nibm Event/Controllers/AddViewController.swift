@@ -31,8 +31,25 @@ class AddViewController: UIViewController {
 
                // show the alert
                self.present(alert, animated: true, completion: nil)
+        text.text = ""
                
     }
+    
+    
+    @IBAction func eventsAdd(_ sender: UIButton) {
+        
+        ref?.child("Posts").childByAutoId().setValue(text.text)
+               let alert = UIAlertController(title: "Alert", message: "Event is added", preferredStyle: UIAlertController.Style.alert)
+
+               // add an action (button)
+               alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+               // show the alert
+               self.present(alert, animated: true, completion: nil)
+        text.text = ""
+        
+    }
+    
     
     
 }
